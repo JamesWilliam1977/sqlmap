@@ -1,0 +1,347 @@
+# Instincts generated from https://github.com/JamesWilliam1977/sqlmap
+# Generated: 2026-07-01T09:49:27.148Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: sqlmap-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Commit Length
+
+## Action
+
+Keep commit messages concise (~23 characters)
+
+## Evidence
+
+- Average commit message length: 23 chars
+- Based on 5 commits
+
+---
+id: sqlmap-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: sqlmap-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: sqlmap-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: sqlmap-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: sqlmap-workflow-core-settings-checks-update
+trigger: "when doing core settings checks update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Workflow Core Settings Checks Update
+
+## Action
+
+Follow the core-settings-checks-update workflow:
+1. Edit lib/controller/checks.py for logic changes or optimizations
+2. Edit lib/core/settings.py to update settings or configuration
+3. Update data/txt/sha256sums.txt (possibly for integrity or tracking changes)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: lib/controller/checks.py, lib/core/settings.py, data/txt/sha256sums.txt
+
+---
+id: sqlmap-workflow-core-settings-optimization
+trigger: "when doing core settings optimization"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Workflow Core Settings Optimization
+
+## Action
+
+Follow the core-settings-optimization workflow:
+1. Edit one or more core files (e.g., lib/core/convert.py, lib/core/dump.py, lib/core/common.py)
+2. Edit lib/core/settings.py for configuration or settings updates
+3. Update data/txt/sha256sums.txt to reflect file changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: lib/core/settings.py, data/txt/sha256sums.txt, lib/core/convert.py
+
+---
+id: sqlmap-instinct-file-naming-camelCase
+trigger: "When creating a new Python file in the repository"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., coreSettings.py)
+
+## Evidence
+
+- Pattern in naming conventions: files use camelCase
+
+---
+id: sqlmap-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., checkSettings)
+
+## Evidence
+
+- Pattern in naming conventions: functions use camelCase
+
+---
+id: sqlmap-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., SettingsController)
+
+## Evidence
+
+- Pattern in naming conventions: classes use PascalCase
+
+---
+id: sqlmap-instinct-constant-naming-screaming-snake-case
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., DEFAULT_TIMEOUT)
+
+## Evidence
+
+- Pattern in naming conventions: constants use SCREAMING_SNAKE_CASE
+
+---
+id: sqlmap-instinct-import-style-relative
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Import Style Relative
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in codeStyle: importStyle is relative
+
+---
+id: sqlmap-instinct-export-style-named
+trigger: "When exporting functions, classes, or variables"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle: exportStyle is named
+
+---
+id: sqlmap-instinct-tests-in-separate-folder
+trigger: "When adding new tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Tests In Separate Folder
+
+## Action
+
+Place test files in the separate 'tests' folder
+
+## Evidence
+
+- Pattern in architecture: testLocation is 'separate'
+- Common folder: tests
+
+---
+id: sqlmap-instinct-git-commit-short-descriptive
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Git Commit Short Descriptive
+
+## Action
+
+Use a short, descriptive, freeform message (average length ~23 characters, no enforced prefix)
+
+## Evidence
+
+- Commits: freeform, short, e.g., 'Minor optimization', 'Minor patch'
+
+---
+id: sqlmap-instinct-core-settings-checks-update
+trigger: "When optimizing or patching core logic related to settings and controller checks"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Core Settings Checks Update
+
+## Action
+
+Edit 'lib/controller/checks.py', then 'lib/core/settings.py', then update 'data/txt/sha256sums.txt'
+
+## Evidence
+
+- Workflow: core-settings-checks-update
+- Example commit sequence and files involved
+
+---
+id: sqlmap-instinct-core-settings-optimization
+trigger: "When optimizing or refactoring core functionality or modules"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/sqlmap
+---
+
+# Sqlmap Instinct Core Settings Optimization
+
+## Action
+
+Edit one or more of 'lib/core/convert.py', 'lib/core/dump.py', 'lib/core/common.py', then 'lib/core/settings.py', then update 'data/txt/sha256sums.txt'
+
+## Evidence
+
+- Workflow: core-settings-optimization
+- Example commit sequence and files involved
+
